@@ -2,8 +2,7 @@ const router = require('express').Router();
 
 router.get('/new', (req, res) => {
     res.render('places/new')
-}
-);
+});
 
 router.get('/', (req, res) => 
 {
@@ -24,6 +23,12 @@ router.get('/', (req, res) =>
         }]
     res.render('places/index', {places});
 });
+
+// CREATE
+router.post('/', (req, res) => {
+    // router.push(req.body);
+    res.redirect('/places');
+})
 
 module.exports = router;
 
